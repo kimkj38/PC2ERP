@@ -1,11 +1,13 @@
 import json
-from generatePC import *
-import matplotlib.pyplot as plt
-import numpy as np
+import random
 import random
 import math
+
+import matplotlib.pyplot as plt
+import numpy as np
 from plyfile import PlyData, PlyElement
-import random
+
+from generatePC import *
 
 scan_id = '4fbad329-465b-2a5d-8401-a3f550ef3de5'
 num = 7

@@ -1,8 +1,10 @@
 import json
-from generatePC import *
-import matplotlib.pyplot as plt
-import numpy as np
 import math
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from generatePC import *
 
 scan_id = '4fbad329-465b-2a5d-8401-a3f550ef3de5'
 

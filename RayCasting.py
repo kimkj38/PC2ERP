@@ -1,14 +1,16 @@
 import trimesh
 import rtree
 import shapely
-import numpy as np
 import random
-from generatePC import *
+import time
+import os
+import multiprocessing
+
+import numpy as np
 import cv2
 from plyfile import PlyData, PlyElement
-import time
-import multiprocessing
-import os
+
+from generatePC import *
 
 
 def raycasting(scan_id, iterations):

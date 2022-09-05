@@ -1,7 +1,8 @@
 import json
-import numpy as np
-from plyfile import PlyData, PlyElement
 import os
+
+from plyfile import PlyData, PlyElement
+import numpy as np
 
 # scan id
 #scan_id = "4fbad329-465b-2a5d-8401-a3f550ef3de5"
