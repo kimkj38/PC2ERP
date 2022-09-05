@@ -14,8 +14,6 @@ from generatePC import *
 
 
 def raycasting(scan_id, iterations):
-
-
     start = time.time()
     
     # scene mesh

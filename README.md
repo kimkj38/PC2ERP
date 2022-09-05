@@ -1,6 +1,10 @@
 # PointCloud to ERP images
 This repository provides projection function which convert point cloud into multi-view 360-degree images in equirectangular projection (ERP) format.
 
+<p align="center">
+  <img src="./src/pcd_image.png" width="800" alt="PointCloud image">
+</p>
+
 ## Requirements
 - numpy
 - matplotlib
