@@ -28,7 +28,7 @@ def raycasting(scan_id, iterations):
     width = 1024//2
     height = 512//2
 
-    # extract semantic information
+    # data to extract semantic information
     plydata = PlyData.read(filename)
     faces = plydata['face'].data['vertex_indices']
     vertexes = plydata['vertex'].data    
@@ -37,23 +37,22 @@ def raycasting(scan_id, iterations):
     point_cloud = get_pc(scan_id)
     seg2pc = get_seg2pc(scan_id, point_cloud)
     obj2pc = get_obj2pc(scan_id, seg2pc)
-    obj2global = get_obj2global(scan_id)
-    obj2hex = get_obj2hex(scan_id)
 
-    # floor coordinates
-    min_point = np.min(point_cloud, axis=0)+1
-    max_point = np.max(point_cloud, axis=0)-1
+    # min & max point coordinate
+    min_point = np.min(point_cloud, axis=0)
+    max_point = np.max(point_cloud, axis=0)
     
     # floor vertexes coordinates
     floor = obj2pc[1] # floor object id == 1
 
-    # scene folder    
+    # make scene folder    
     save_path = "/root/dataset/3RScan_ERP/{}".format(scan_id)
     if not os.path.exists(save_path):
         os.mkdir(save_path)
 
-
+    # ray casting
     for it in range(iterations):
+        # make ERP folder in scene folder
         ERP_folder = os.path.join(save_path, 'ERP{}'.format(it))
         if not os.path.exists(ERP_folder):
             os.mkdir(ERP_folder)
@@ -79,12 +78,13 @@ def raycasting(scan_id, iterations):
 
         print(cam_x, cam_y, cam_z)
 
-        # objects per section
+        # object ids list per section
         mask1 = []
         mask2 = []
         mask3 = []
         mask4 = []
 
+        # random degree for rotation variation
         random_degree = random.uniform(0,360)
         print("random degree는", random_degree)
 
@@ -112,11 +112,11 @@ def raycasting(scan_id, iterations):
                 # theta degree
                 theta_degree = np.degrees(rotated_theta)
 
-                # face that ray intersects first
+                # face id that ray intersects first
                 face_id = mesh.ray.intersects_first(np.array([[cam_x, cam_y, cam_z]]), np.array([[ray_x, ray_y, ray_z]]))   
 
                 # if intersection exists, extract face color
-                if face_id != -1:
+                if face_id != -1: # -1 means there's no intersection
                     vertex3 = faces[face_id]
                     vertex = vertexes[vertex3[0][0]]
                     img[y, x, 0] = vertex[5]
@@ -138,6 +138,7 @@ def raycasting(scan_id, iterations):
         cv2.imwrite(os.path.join(ERP_folder,"complete_ERP.jpg"), img)
 
         # make partial image and partial scene graph
+        # make mask.jpg when there are 5~10 objects in masking area
         if 5 <= len(set(mask1)) < 10:
             mask1_img = img.copy()
             mask1_img[:, :width//4, :] = 0
@@ -146,6 +147,7 @@ def raycasting(scan_id, iterations):
             
             obj_ids = mask2 + mask3 + mask4
 
+            # bring triplet from original relationsips.json only when both subject and object are included in non-masking area
             i  = 0
             for obj in relationships:
                 if (obj[0] in obj_ids) and (obj[1] in obj_ids):
