@@ -4,11 +4,11 @@ from plyfile import PlyData, PlyElement
 import os
 
 # scan id
-scan_id = "4acaebc8-6c10-2a2a-8525-fe9c4b7f4b25"
+#scan_id = "4fbad329-465b-2a5d-8401-a3f550ef3de5"
 
 # subset json
-with open('subset.json') as f:
-    subset_file = json.load(f)["scans"]
+# with open('subset.json') as f:
+#     subset_file = json.load(f)["scans"]
 
 # original json
 with open('original.json') as f:
@@ -112,55 +112,55 @@ def get_obj2hex(scan_id):
 
 
 
-point_cloud = get_pc(scan_id)
-seg2pc = get_seg2pc(scan_id, point_cloud)
-obj2pc = get_obj2pc(scan_id, seg2pc)
-obj2global = get_obj2global(scan_id)
-obj2hex = get_obj2hex(scan_id)
+# point_cloud = get_pc(scan_id)
+# seg2pc = get_seg2pc(scan_id, point_cloud)
+# obj2pc = get_obj2pc(scan_id, seg2pc)
+# obj2global = get_obj2global(scan_id)
+# obj2hex = get_obj2hex(scan_id)
 
-for i, scan in enumerate(subset_file):
-    if scan["scan"] == scan_id:
+# for i, scan in enumerate(subset_file):
+#     if scan["scan"] == scan_id:
         
-        # split name
-        split = subset_file[i]["split"] 
-        ply_name = scan_id + "_{}.ply".format(split) 
-        # object ids
-        object_ids = list(subset_file[i]["objects"].keys())
-        vertex = []
-        for obj_id in object_ids:
-            pc = obj2pc[int(obj_id)]
-            global_id = int(obj2global[obj_id])
-            r, g, b = hex2rgb(obj2hex[obj_id])
+#         # split name
+#         split = subset_file[i]["split"] 
+#         ply_name = scan_id + "_{}.ply".format(split) 
+#         # object ids
+#         object_ids = list(subset_file[i]["objects"].keys())
+#         vertex = []
+#         for obj_id in object_ids:
+#             pc = obj2pc[int(obj_id)]
+#             global_id = int(obj2global[obj_id])
+#             r, g, b = hex2rgb(obj2hex[obj_id])
 
-            for x,y,z in pc:
-                if len(vertex) == 0:
-                    vertex = [(x, y, z, r, g, b, obj_id, global_id)]
+#             for x,y,z in pc:
+#                 if len(vertex) == 0:
+#                     vertex = [(x, y, z, r, g, b, obj_id, global_id)]
                     
-                else:
-                    vertex.append((x, y, z, r, g, b, obj_id, global_id))
+#                 else:
+#                     vertex.append((x, y, z, r, g, b, obj_id, global_id))
             
-        vertex = np.array(vertex, dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1'),
-                    ('object_id', 'ushort'), ('global_id', 'ushort')])
+#         vertex = np.array(vertex, dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1'),
+#                     ('object_id', 'ushort'), ('global_id', 'ushort')])
         
 
-            # print(type((np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'))[0]))
-            # break
+#             # print(type((np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'))[0]))
+#             # break
 
-            # if len(vertex) == 0:        
-            #     vertex = np.array(np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'), 
-            #            dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1')])
-            # else:
-            #     obj_vertex = np.array(np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'), 
-            #            dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1')])
-            #     vertex = np.concatenate((vertex, obj_vertex), axis=0)
+#             # if len(vertex) == 0:        
+#             #     vertex = np.array(np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'), 
+#             #            dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1')])
+#             # else:
+#             #     obj_vertex = np.array(np.concatenate((pc, np.tile([r, g, b, obj_id, global_id], (len(pc),1))), axis=1).astype('f4'), 
+#             #            dtype=[('x', 'f4'), ('y', 'f4'), ('z', 'f4'), ('r', 'u1'), ('g', 'u1'), ('b', 'u1')])
+#             #     vertex = np.concatenate((vertex, obj_vertex), axis=0)
 
 
-        el = PlyElement.describe(vertex, 'vertex')
-        PlyData([el], text=True).write(os.path.join(scan_id, ply_name))
+#         el = PlyElement.describe(vertex, 'vertex')
+#         PlyData([el], text=True).write(os.path.join(scan_id, ply_name))
     
         
-        # # original json file to get information
-        # original_objects = original_file[i]["objects"]
+#         # # original json file to get information
+#         # original_objects = original_file[i]["objects"]
 
 
 
