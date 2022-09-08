@@ -1,0 +1,1981 @@
+{
+    "url": "https://0th.jpg",
+    "objects": [
+        {
+            "name": "floor"
+        },
+        {
+            "name": "soap dish"
+        },
+        {
+            "name": "door"
+        },
+        {
+            "name": "trash can"
+        },
+        {
+            "name": "fridge"
+        },
+        {
+            "name": "object"
+        },
+        {
+            "name": "stove"
+        },
+        {
+            "name": "kitchen cabinet"
+        },
+        {
+            "name": "oven glove"
+        },
+        {
+            "name": "wall"
+        },
+        {
+            "name": "ceiling"
+        },
+        {
+            "name": "heater"
+        },
+        {
+            "name": "pipe"
+        },
+        {
+            "name": "hood"
+        },
+        {
+            "name": "kettle"
+        },
+        {
+            "name": "toaster"
+        },
+        {
+            "name": "radiator"
+        },
+        {
+            "name": "curtain"
+        },
+        {
+            "name": "sponge"
+        },
+        {
+            "name": "chair"
+        },
+        {
+            "name": "dining table"
+        },
+        {
+            "name": "table lamp"
+        },
+        {
+            "name": "box"
+        },
+        {
+            "name": "rack"
+        },
+        {
+            "name": "shoe"
+        },
+        {
+            "name": "sink"
+        }
+    ],
+    "attributes": [
+        {
+            "attribute": "clean",
+            "object": 0
+        },
+        {
+            "attribute": "flat",
+            "object": 0
+        },
+        {
+            "attribute": "inside",
+            "object": 0
+        },
+        {
+            "attribute": "lower",
+            "object": 0
+        },
+        {
+            "attribute": "horizontal",
+            "object": 0
+        },
+        {
+            "attribute": "beige",
+            "object": 0
+        },
+        {
+            "attribute": "white",
+            "object": 2
+        },
+        {
+            "attribute": "flat",
+            "object": 2
+        },
+        {
+            "attribute": "closed",
+            "object": 2
+        },
+        {
+            "attribute": "tangible",
+            "object": 6
+        },
+        {
+            "attribute": "low",
+            "object": 10
+        },
+        {
+            "attribute": "architectural",
+            "object": 1
+        },
+        {
+            "attribute": "architectural",
+            "object": 14
+        },
+        {
+            "attribute": "overhead",
+            "object": 15
+        },
+        {
+            "attribute": "upper",
+            "object": 15
+        },
+        {
+            "attribute": "metal",
+            "object": 16
+        },
+        {
+            "attribute": "rectangular",
+            "object": 16
+        },
+        {
+            "attribute": "white",
+            "object": 16
+        },
+        {
+            "attribute": "tall",
+            "object": 16
+        },
+        {
+            "attribute": "narrow",
+            "object": 16
+        },
+        {
+            "attribute": "tubular",
+            "object": 17
+        },
+        {
+            "attribute": "architectural",
+            "object": 25
+        },
+        {
+            "attribute": "porous",
+            "object": 219
+        },
+        {
+            "attribute": "wooden",
+            "object": 30
+        },
+        {
+            "attribute": "white",
+            "object": 30
+        },
+        {
+            "attribute": "rectangular",
+            "object": 36
+        },
+        {
+            "attribute": "tall",
+            "object": 36
+        },
+        {
+            "attribute": "narrow",
+            "object": 27
+        },
+        {
+            "attribute": "rectangular",
+            "object": 41
+        },
+        {
+            "attribute": "tall",
+            "object": 41
+        },
+        {
+            "attribute": "tangible",
+            "object": 42
+        },
+        {
+            "attribute": "tangible",
+            "object": 43
+        },
+        {
+            "attribute": "tangible",
+            "object": 45
+        },
+        {
+            "attribute": "architectural",
+            "object": 46
+        },
+        {
+            "attribute": "tangible",
+            "object": 47
+        },
+        {
+            "attribute": "wide",
+            "object": 12
+        }
+    ],
+    "relationships": [
+        {
+            "predicate": "attached to",
+            "subject": 1,
+            "object": 0
+        },
+        {
+            "predicate": "hanging on",
+            "subject": 2,
+            "object": 1
+        },
+        {
+            "predicate": "standing on",
+            "subject": 3,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 4,
+            "object": 0
+        },
+        {
+            "predicate": "attached to",
+            "subject": 8,
+            "object": 10
+        },
+        {
+            "predicate": "standing on",
+            "subject": 10,
+            "object": 0
+        },
+        {
+            "predicate": "belonging to",
+            "subject": 12,
+            "object": 10
+        },
+        {
+            "predicate": "attached to",
+            "subject": 14,
+            "object": 0
+        },
+        {
+            "predicate": "attached to",
+            "subject": 15,
+            "object": 1
+        },
+        {
+            "predicate": "connected to",
+            "subject": 16,
+            "object": 14
+        },
+        {
+            "predicate": "attached to",
+            "subject": 17,
+            "object": 15
+        },
+        {
+            "predicate": "attached to",
+            "subject": 17,
+            "object": 14
+        },
+        {
+            "predicate": "supported by",
+            "subject": 19,
+            "object": 10
+        },
+        {
+            "predicate": "supported by",
+            "subject": 20,
+            "object": 10
+        },
+        {
+            "predicate": "connected to",
+            "subject": 22,
+            "object": 46
+        },
+        {
+            "predicate": "attached to",
+            "subject": 23,
+            "object": 15
+        },
+        {
+            "predicate": "attached to",
+            "subject": 25,
+            "object": 0
+        },
+        {
+            "predicate": "attached to",
+            "subject": 27,
+            "object": 14
+        },
+        {
+            "predicate": "standing on",
+            "subject": 30,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 32,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 33,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 34,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 35,
+            "object": 34
+        },
+        {
+            "predicate": "standing on",
+            "subject": 36,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 37,
+            "object": 34
+        },
+        {
+            "predicate": "standing on",
+            "subject": 38,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 39,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 41,
+            "object": 0
+        },
+        {
+            "predicate": "lying in",
+            "subject": 42,
+            "object": 10
+        },
+        {
+            "predicate": "lying in",
+            "subject": 43,
+            "object": 10
+        },
+        {
+            "predicate": "supported by",
+            "subject": 45,
+            "object": 22
+        },
+        {
+            "predicate": "attached to",
+            "subject": 46,
+            "object": 0
+        },
+        {
+            "predicate": "standing on",
+            "subject": 47,
+            "object": 0
+        },
+        {
+            "predicate": "supported by",
+            "subject": 449,
+            "object": 12
+        },
+        {
+            "predicate": "right",
+            "subject": 3,
+            "object": 4
+        },
+        {
+            "predicate": "close by",
+            "subject": 3,
+            "object": 4
+        },
+        {
+            "predicate": "front",
+            "subject": 3,
+            "object": 4
+        },
+        {
+            "predicate": "left",
+            "subject": 3,
+            "object": 10
+        },
+        {
+            "predicate": "left",
+            "subject": 3,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 3,
+            "object": 32
+        },
+        {
+            "predicate": "left",
+            "subject": 3,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 3,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 3,
+            "object": 39
+        },
+        {
+            "predicate": "front",
+            "subject": 3,
+            "object": 39
+        },
+        {
+            "predicate": "right",
+            "subject": 3,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 3,
+            "object": 47
+        },
+        {
+            "predicate": "behind",
+            "subject": 4,
+            "object": 3
+        },
+        {
+            "predicate": "close by",
+            "subject": 4,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 10
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 4,
+            "object": 32
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 4,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 4,
+            "object": 39
+        },
+        {
+            "predicate": "front",
+            "subject": 4,
+            "object": 39
+        },
+        {
+            "predicate": "right",
+            "subject": 4,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 4,
+            "object": 47
+        },
+        {
+            "predicate": "left",
+            "subject": 8,
+            "object": 12
+        },
+        {
+            "predicate": "front",
+            "subject": 8,
+            "object": 19
+        },
+        {
+            "predicate": "left",
+            "subject": 8,
+            "object": 19
+        },
+        {
+            "predicate": "front",
+            "subject": 8,
+            "object": 20
+        },
+        {
+            "predicate": "left",
+            "subject": 8,
+            "object": 20
+        },
+        {
+            "predicate": "front",
+            "subject": 8,
+            "object": 42
+        },
+        {
+            "predicate": "close by",
+            "subject": 8,
+            "object": 42
+        },
+        {
+            "predicate": "left",
+            "subject": 8,
+            "object": 42
+        },
+        {
+            "predicate": "front",
+            "subject": 8,
+            "object": 43
+        },
+        {
+            "predicate": "left",
+            "subject": 8,
+            "object": 43
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 3
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 4
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 30
+        },
+        {
+            "predicate": "front",
+            "subject": 10,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 32
+        },
+        {
+            "predicate": "front",
+            "subject": 10,
+            "object": 32
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 33
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 34
+        },
+        {
+            "predicate": "close by",
+            "subject": 10,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 10,
+            "object": 34
+        },
+        {
+            "predicate": "right",
+            "subject": 10,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 12,
+            "object": 8
+        },
+        {
+            "predicate": "right",
+            "subject": 12,
+            "object": 19
+        },
+        {
+            "predicate": "right",
+            "subject": 12,
+            "object": 20
+        },
+        {
+            "predicate": "close by",
+            "subject": 12,
+            "object": 20
+        },
+        {
+            "predicate": "behind",
+            "subject": 12,
+            "object": 20
+        },
+        {
+            "predicate": "right",
+            "subject": 12,
+            "object": 42
+        },
+        {
+            "predicate": "close by",
+            "subject": 12,
+            "object": 43
+        },
+        {
+            "predicate": "right",
+            "subject": 16,
+            "object": 17
+        },
+        {
+            "predicate": "close by",
+            "subject": 16,
+            "object": 17
+        },
+        {
+            "predicate": "behind",
+            "subject": 16,
+            "object": 17
+        },
+        {
+            "predicate": "front",
+            "subject": 16,
+            "object": 27
+        },
+        {
+            "predicate": "close by",
+            "subject": 16,
+            "object": 27
+        },
+        {
+            "predicate": "left",
+            "subject": 16,
+            "object": 27
+        },
+        {
+            "predicate": "front",
+            "subject": 17,
+            "object": 16
+        },
+        {
+            "predicate": "close by",
+            "subject": 17,
+            "object": 16
+        },
+        {
+            "predicate": "left",
+            "subject": 17,
+            "object": 16
+        },
+        {
+            "predicate": "left",
+            "subject": 17,
+            "object": 23
+        },
+        {
+            "predicate": "front",
+            "subject": 17,
+            "object": 27
+        },
+        {
+            "predicate": "close by",
+            "subject": 17,
+            "object": 27
+        },
+        {
+            "predicate": "left",
+            "subject": 17,
+            "object": 27
+        },
+        {
+            "predicate": "right",
+            "subject": 19,
+            "object": 8
+        },
+        {
+            "predicate": "behind",
+            "subject": 19,
+            "object": 8
+        },
+        {
+            "predicate": "left",
+            "subject": 19,
+            "object": 12
+        },
+        {
+            "predicate": "left",
+            "subject": 19,
+            "object": 20
+        },
+        {
+            "predicate": "behind",
+            "subject": 19,
+            "object": 42
+        },
+        {
+            "predicate": "front",
+            "subject": 19,
+            "object": 43
+        },
+        {
+            "predicate": "left",
+            "subject": 19,
+            "object": 43
+        },
+        {
+            "predicate": "right",
+            "subject": 20,
+            "object": 8
+        },
+        {
+            "predicate": "behind",
+            "subject": 20,
+            "object": 8
+        },
+        {
+            "predicate": "front",
+            "subject": 20,
+            "object": 12
+        },
+        {
+            "predicate": "close by",
+            "subject": 20,
+            "object": 12
+        },
+        {
+            "predicate": "left",
+            "subject": 20,
+            "object": 12
+        },
+        {
+            "predicate": "right",
+            "subject": 20,
+            "object": 19
+        },
+        {
+            "predicate": "right",
+            "subject": 20,
+            "object": 42
+        },
+        {
+            "predicate": "front",
+            "subject": 20,
+            "object": 43
+        },
+        {
+            "predicate": "left",
+            "subject": 20,
+            "object": 43
+        },
+        {
+            "predicate": "right",
+            "subject": 23,
+            "object": 17
+        },
+        {
+            "predicate": "right",
+            "subject": 27,
+            "object": 16
+        },
+        {
+            "predicate": "close by",
+            "subject": 27,
+            "object": 16
+        },
+        {
+            "predicate": "behind",
+            "subject": 27,
+            "object": 16
+        },
+        {
+            "predicate": "right",
+            "subject": 27,
+            "object": 17
+        },
+        {
+            "predicate": "close by",
+            "subject": 27,
+            "object": 17
+        },
+        {
+            "predicate": "behind",
+            "subject": 27,
+            "object": 17
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 3
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 4
+        },
+        {
+            "predicate": "behind",
+            "subject": 30,
+            "object": 10
+        },
+        {
+            "predicate": "left",
+            "subject": 30,
+            "object": 10
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 32
+        },
+        {
+            "predicate": "behind",
+            "subject": 30,
+            "object": 32
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 33
+        },
+        {
+            "predicate": "close by",
+            "subject": 30,
+            "object": 33
+        },
+        {
+            "predicate": "front",
+            "subject": 30,
+            "object": 33
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 34
+        },
+        {
+            "predicate": "close by",
+            "subject": 30,
+            "object": 34
+        },
+        {
+            "predicate": "right",
+            "subject": 30,
+            "object": 36
+        },
+        {
+            "predicate": "front",
+            "subject": 30,
+            "object": 36
+        },
+        {
+            "predicate": "behind",
+            "subject": 30,
+            "object": 39
+        },
+        {
+            "predicate": "behind",
+            "subject": 30,
+            "object": 41
+        },
+        {
+            "predicate": "front",
+            "subject": 30,
+            "object": 47
+        },
+        {
+            "predicate": "close by",
+            "subject": 30,
+            "object": 47
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 4
+        },
+        {
+            "predicate": "behind",
+            "subject": 32,
+            "object": 10
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 10
+        },
+        {
+            "predicate": "front",
+            "subject": 32,
+            "object": 30
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 30
+        },
+        {
+            "predicate": "close by",
+            "subject": 32,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 33
+        },
+        {
+            "predicate": "close by",
+            "subject": 32,
+            "object": 34
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 32,
+            "object": 36
+        },
+        {
+            "predicate": "left",
+            "subject": 32,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 32,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 32,
+            "object": 39
+        },
+        {
+            "predicate": "behind",
+            "subject": 32,
+            "object": 39
+        },
+        {
+            "predicate": "right",
+            "subject": 32,
+            "object": 41
+        },
+        {
+            "predicate": "close by",
+            "subject": 32,
+            "object": 41
+        },
+        {
+            "predicate": "behind",
+            "subject": 32,
+            "object": 41
+        },
+        {
+            "predicate": "front",
+            "subject": 32,
+            "object": 47
+        },
+        {
+            "predicate": "right",
+            "subject": 33,
+            "object": 4
+        },
+        {
+            "predicate": "left",
+            "subject": 33,
+            "object": 10
+        },
+        {
+            "predicate": "behind",
+            "subject": 33,
+            "object": 30
+        },
+        {
+            "predicate": "close by",
+            "subject": 33,
+            "object": 30
+        },
+        {
+            "predicate": "left",
+            "subject": 33,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 33,
+            "object": 32
+        },
+        {
+            "predicate": "close by",
+            "subject": 33,
+            "object": 32
+        },
+        {
+            "predicate": "close by",
+            "subject": 33,
+            "object": 34
+        },
+        {
+            "predicate": "behind",
+            "subject": 33,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 33,
+            "object": 36
+        },
+        {
+            "predicate": "close by",
+            "subject": 33,
+            "object": 36
+        },
+        {
+            "predicate": "left",
+            "subject": 33,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 33,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 33,
+            "object": 39
+        },
+        {
+            "predicate": "behind",
+            "subject": 33,
+            "object": 39
+        },
+        {
+            "predicate": "right",
+            "subject": 33,
+            "object": 41
+        },
+        {
+            "predicate": "behind",
+            "subject": 33,
+            "object": 41
+        },
+        {
+            "predicate": "front",
+            "subject": 33,
+            "object": 47
+        },
+        {
+            "predicate": "left",
+            "subject": 33,
+            "object": 47
+        },
+        {
+            "predicate": "behind",
+            "subject": 34,
+            "object": 10
+        },
+        {
+            "predicate": "close by",
+            "subject": 34,
+            "object": 10
+        },
+        {
+            "predicate": "left",
+            "subject": 34,
+            "object": 10
+        },
+        {
+            "predicate": "close by",
+            "subject": 34,
+            "object": 30
+        },
+        {
+            "predicate": "left",
+            "subject": 34,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 34,
+            "object": 32
+        },
+        {
+            "predicate": "close by",
+            "subject": 34,
+            "object": 32
+        },
+        {
+            "predicate": "front",
+            "subject": 34,
+            "object": 33
+        },
+        {
+            "predicate": "close by",
+            "subject": 34,
+            "object": 33
+        },
+        {
+            "predicate": "close by",
+            "subject": 34,
+            "object": 36
+        },
+        {
+            "predicate": "left",
+            "subject": 34,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 34,
+            "object": 38
+        },
+        {
+            "predicate": "behind",
+            "subject": 34,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 34,
+            "object": 39
+        },
+        {
+            "predicate": "right",
+            "subject": 34,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 34,
+            "object": 47
+        },
+        {
+            "predicate": "front",
+            "subject": 35,
+            "object": 37
+        },
+        {
+            "predicate": "left",
+            "subject": 35,
+            "object": 37
+        },
+        {
+            "predicate": "right",
+            "subject": 36,
+            "object": 3
+        },
+        {
+            "predicate": "right",
+            "subject": 36,
+            "object": 4
+        },
+        {
+            "predicate": "left",
+            "subject": 36,
+            "object": 10
+        },
+        {
+            "predicate": "behind",
+            "subject": 36,
+            "object": 30
+        },
+        {
+            "predicate": "left",
+            "subject": 36,
+            "object": 30
+        },
+        {
+            "predicate": "right",
+            "subject": 36,
+            "object": 32
+        },
+        {
+            "predicate": "behind",
+            "subject": 36,
+            "object": 32
+        },
+        {
+            "predicate": "right",
+            "subject": 36,
+            "object": 33
+        },
+        {
+            "predicate": "close by",
+            "subject": 36,
+            "object": 33
+        },
+        {
+            "predicate": "behind",
+            "subject": 36,
+            "object": 33
+        },
+        {
+            "predicate": "right",
+            "subject": 36,
+            "object": 34
+        },
+        {
+            "predicate": "close by",
+            "subject": 36,
+            "object": 34
+        },
+        {
+            "predicate": "behind",
+            "subject": 36,
+            "object": 41
+        },
+        {
+            "predicate": "behind",
+            "subject": 36,
+            "object": 47
+        },
+        {
+            "predicate": "close by",
+            "subject": 36,
+            "object": 47
+        },
+        {
+            "predicate": "left",
+            "subject": 36,
+            "object": 47
+        },
+        {
+            "predicate": "right",
+            "subject": 37,
+            "object": 35
+        },
+        {
+            "predicate": "behind",
+            "subject": 37,
+            "object": 35
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 4
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 32
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 33
+        },
+        {
+            "predicate": "front",
+            "subject": 38,
+            "object": 34
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 34
+        },
+        {
+            "predicate": "close by",
+            "subject": 38,
+            "object": 39
+        },
+        {
+            "predicate": "behind",
+            "subject": 38,
+            "object": 39
+        },
+        {
+            "predicate": "close by",
+            "subject": 38,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 38,
+            "object": 41
+        },
+        {
+            "predicate": "behind",
+            "subject": 39,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 3
+        },
+        {
+            "predicate": "behind",
+            "subject": 39,
+            "object": 4
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 4
+        },
+        {
+            "predicate": "front",
+            "subject": 39,
+            "object": 30
+        },
+        {
+            "predicate": "front",
+            "subject": 39,
+            "object": 32
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 32
+        },
+        {
+            "predicate": "front",
+            "subject": 39,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 39,
+            "object": 38
+        },
+        {
+            "predicate": "close by",
+            "subject": 39,
+            "object": 38
+        },
+        {
+            "predicate": "front",
+            "subject": 39,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 39,
+            "object": 41
+        },
+        {
+            "predicate": "left",
+            "subject": 41,
+            "object": 3
+        },
+        {
+            "predicate": "left",
+            "subject": 41,
+            "object": 4
+        },
+        {
+            "predicate": "front",
+            "subject": 41,
+            "object": 30
+        },
+        {
+            "predicate": "front",
+            "subject": 41,
+            "object": 32
+        },
+        {
+            "predicate": "close by",
+            "subject": 41,
+            "object": 32
+        },
+        {
+            "predicate": "left",
+            "subject": 41,
+            "object": 32
+        },
+        {
+            "predicate": "front",
+            "subject": 41,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 41,
+            "object": 33
+        },
+        {
+            "predicate": "left",
+            "subject": 41,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 41,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 41,
+            "object": 38
+        },
+        {
+            "predicate": "close by",
+            "subject": 41,
+            "object": 38
+        },
+        {
+            "predicate": "right",
+            "subject": 41,
+            "object": 39
+        },
+        {
+            "predicate": "behind",
+            "subject": 41,
+            "object": 39
+        },
+        {
+            "predicate": "front",
+            "subject": 41,
+            "object": 47
+        },
+        {
+            "predicate": "right",
+            "subject": 42,
+            "object": 8
+        },
+        {
+            "predicate": "close by",
+            "subject": 42,
+            "object": 8
+        },
+        {
+            "predicate": "behind",
+            "subject": 42,
+            "object": 8
+        },
+        {
+            "predicate": "left",
+            "subject": 42,
+            "object": 12
+        },
+        {
+            "predicate": "front",
+            "subject": 42,
+            "object": 19
+        },
+        {
+            "predicate": "left",
+            "subject": 42,
+            "object": 20
+        },
+        {
+            "predicate": "front",
+            "subject": 42,
+            "object": 43
+        },
+        {
+            "predicate": "left",
+            "subject": 42,
+            "object": 43
+        },
+        {
+            "predicate": "right",
+            "subject": 43,
+            "object": 8
+        },
+        {
+            "predicate": "behind",
+            "subject": 43,
+            "object": 8
+        },
+        {
+            "predicate": "close by",
+            "subject": 43,
+            "object": 12
+        },
+        {
+            "predicate": "right",
+            "subject": 43,
+            "object": 19
+        },
+        {
+            "predicate": "behind",
+            "subject": 43,
+            "object": 19
+        },
+        {
+            "predicate": "right",
+            "subject": 43,
+            "object": 20
+        },
+        {
+            "predicate": "behind",
+            "subject": 43,
+            "object": 20
+        },
+        {
+            "predicate": "right",
+            "subject": 43,
+            "object": 42
+        },
+        {
+            "predicate": "behind",
+            "subject": 43,
+            "object": 42
+        },
+        {
+            "predicate": "right",
+            "subject": 47,
+            "object": 3
+        },
+        {
+            "predicate": "right",
+            "subject": 47,
+            "object": 4
+        },
+        {
+            "predicate": "close by",
+            "subject": 47,
+            "object": 30
+        },
+        {
+            "predicate": "behind",
+            "subject": 47,
+            "object": 30
+        },
+        {
+            "predicate": "behind",
+            "subject": 47,
+            "object": 32
+        },
+        {
+            "predicate": "right",
+            "subject": 47,
+            "object": 33
+        },
+        {
+            "predicate": "behind",
+            "subject": 47,
+            "object": 33
+        },
+        {
+            "predicate": "right",
+            "subject": 47,
+            "object": 34
+        },
+        {
+            "predicate": "front",
+            "subject": 47,
+            "object": 36
+        },
+        {
+            "predicate": "right",
+            "subject": 47,
+            "object": 36
+        },
+        {
+            "predicate": "close by",
+            "subject": 47,
+            "object": 36
+        },
+        {
+            "predicate": "behind",
+            "subject": 47,
+            "object": 41
+        },
+        {
+            "predicate": "lower than",
+            "subject": 10,
+            "object": 27
+        },
+        {
+            "predicate": "higher than",
+            "subject": 27,
+            "object": 10
+        },
+        {
+            "predicate": "higher than",
+            "subject": 36,
+            "object": 41
+        },
+        {
+            "predicate": "lower than",
+            "subject": 41,
+            "object": 36
+        },
+        {
+            "predicate": "same as",
+            "subject": 32,
+            "object": 30
+        },
+        {
+            "predicate": "same as",
+            "subject": 30,
+            "object": 32
+        },
+        {
+            "predicate": "same as",
+            "subject": 31,
+            "object": 33
+        },
+        {
+            "predicate": "same as",
+            "subject": 33,
+            "object": 31
+        },
+        {
+            "predicate": "same object type",
+            "subject": 6,
+            "object": 42
+        },
+        {
+            "predicate": "same object type",
+            "subject": 43,
+            "object": 6
+        },
+        {
+            "predicate": "same object type",
+            "subject": 47,
+            "object": 43
+        },
+        {
+            "predicate": "same object type",
+            "subject": 1,
+            "object": 14
+        },
+        {
+            "predicate": "same object type",
+            "subject": 46,
+            "object": 14
+        },
+        {
+            "predicate": "same object type",
+            "subject": 32,
+            "object": 31
+        },
+        {
+            "predicate": "same object type",
+            "subject": 14,
+            "object": 25
+        },
+        {
+            "predicate": "same object type",
+            "subject": 45,
+            "object": 42
+        },
+        {
+            "predicate": "same object type",
+            "subject": 47,
+            "object": 42
+        },
+        {
+            "predicate": "same object type",
+            "subject": 47,
+            "object": 6
+        },
+        {
+            "predicate": "same object type",
+            "subject": 1,
+            "object": 25
+        },
+        {
+            "predicate": "same object type",
+            "subject": 30,
+            "object": 32
+        },
+        {
+            "predicate": "same object type",
+            "subject": 33,
+            "object": 31
+        },
+        {
+            "predicate": "same object type",
+            "subject": 36,
+            "object": 41
+        },
+        {
+            "predicate": "same object type",
+            "subject": 14,
+            "object": 46
+        },
+        {
+            "predicate": "same object type",
+            "subject": 6,
+            "object": 47
+        },
+        {
+            "predicate": "same object type",
+            "subject": 46,
+            "object": 25
+        },
+        {
+            "predicate": "same object type",
+            "subject": 42,
+            "object": 6
+        },
+        {
+            "predicate": "same color",
+            "subject": 30,
+            "object": 16
+        },
+        {
+            "predicate": "same object type",
+            "subject": 4,
+            "object": 3
+        },
+        {
+            "predicate": "same object type",
+            "subject": 6,
+            "object": 43
+        },
+        {
+            "predicate": "same object type",
+            "subject": 31,
+            "object": 32
+        },
+        {
+            "predicate": "same object type",
+            "subject": 42,
+            "object": 45
+        },
+        {
+            "predicate": "same object type",
+            "subject": 27,
+            "object": 10
+        },
+        {
+            "predicate": "same shape",
+            "subject": 0,
+            "object": 2
+        },
+        {
+            "predicate": "same shape",
+            "subject": 2,
+            "object": 0
+        },
+        {
+            "predicate": "same object type",
+            "subject": 1,
+            "object": 46
+        },
+        {
+            "predicate": "same object type",
+            "subject": 47,
+            "object": 45
+        },
+        {
+            "predicate": "same object type",
+            "subject": 32,
+            "object": 33
+        },
+        {
+            "predicate": "same object type",
+            "subject": 32,
+            "object": 30
+        },
+        {
+            "predicate": "same object type",
+            "subject": 25,
+            "object": 14
+        },
+        {
+            "predicate": "same color",
+            "subject": 30,
+            "object": 2
+        },
+        {
+            "predicate": "same object type",
+            "subject": 25,
+            "object": 1
+        },
+        {
+            "predicate": "same object type",
+            "subject": 42,
+            "object": 43
+        },
+        {
+            "predicate": "same object type",
+            "subject": 45,
+            "object": 6
+        },
+        {
+            "predicate": "same object type",
+            "subject": 33,
+            "object": 30
+        },
+        {
+            "predicate": "same color",
+            "subject": 2,
+            "object": 16
+        },
+        {
+            "predicate": "same object type",
+            "subject": 30,
+            "object": 31
+        },
+        {
+            "predicate": "same object type",
+            "subject": 33,
+            "object": 32
+        },
+        {
+            "predicate": "same object type",
+            "subject": 31,
+            "object": 33
+        },
+        {
+            "predicate": "same object type",
+            "subject": 10,
+            "object": 27
+        },
+        {
+            "predicate": "same object type",
+            "subject": 42,
+            "object": 47
+        },
+        {
+            "predicate": "same object type",
+            "subject": 6,
+            "object": 45
+        },
+        {
+            "predicate": "same color",
+            "subject": 2,
+            "object": 30
+        },
+        {
+            "predicate": "same object type",
+            "subject": 43,
+            "object": 42
+        },
+        {
+            "predicate": "same object type",
+            "subject": 3,
+            "object": 4
+        },
+        {
+            "predicate": "same color",
+            "subject": 16,
+            "object": 2
+        },
+        {
+            "predicate": "same object type",
+            "subject": 45,
+            "object": 47
+        },
+        {
+            "predicate": "same object type",
+            "subject": 31,
+            "object": 30
+        },
+        {
+            "predicate": "same object type",
+            "subject": 43,
+            "object": 47
+        },
+        {
+            "predicate": "same object type",
+            "subject": 41,
+            "object": 36
+        },
+        {
+            "predicate": "same color",
+            "subject": 16,
+            "object": 30
+        },
+        {
+            "predicate": "same object type",
+            "subject": 46,
+            "object": 1
+        },
+        {
+            "predicate": "same object type",
+            "subject": 43,
+            "object": 45
+        },
+        {
+            "predicate": "same object type",
+            "subject": 37,
+            "object": 35
+        },
+        {
+            "predicate": "same object type",
+            "subject": 25,
+            "object": 46
+        },
+        {
+            "predicate": "same object type",
+            "subject": 30,
+            "object": 33
+        },
+        {
+            "predicate": "same object type",
+            "subject": 35,
+            "object": 37
+        },
+        {
+            "predicate": "same object type",
+            "subject": 45,
+            "object": 43
+        },
+        {
+            "predicate": "same object type",
+            "subject": 14,
+            "object": 1
+        }
+    ]
+}
