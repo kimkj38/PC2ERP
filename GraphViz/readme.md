@@ -1,3 +1,13 @@
+This is an extended version of GraphViz by ranjaykrishna
+![OriginalCode](https://github.com/ranjaykrishna/GraphViz)
+
+# Converting 3DSSG-json to GraphViz-json
+In 3DSSG data and GraphViz data, each data structure is different.
+
+So It needs to be converted, and the process is as below.
+
+![Converting Process](PC2ERP/GraphViz/converting_process.jpg)
+
 # GraphViz
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/ranjaykrishna/GraphViz/blob/master/LICENSE)
 
