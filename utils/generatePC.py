@@ -12,7 +12,7 @@ import numpy as np
 #     subset_file = json.load(f)["scans"]
 
 # original json
-with open('original.json') as f:
+with open('/root/dev/3DSSG/objects.json') as f:
     original_file = json.load(f)["scans"]
 
 # get rgb from hex code
