@@ -12,7 +12,6 @@ from plyfile import PlyData, PlyElement
 
 from utils.generatePC import *
 
-
 '''
 - 입력으로, ( scene, relation_json, camera_position, ray_components )를 받고, ERP 이미지를 반환해주는 방식으로 수정 필요
 '''
