@@ -19,11 +19,11 @@ def raycasting(scan_id, iterations):
     start = time.time()
     
     # scene mesh
-    filename = '/root/dataset/3RScan/{}/labels.instances.annotated.v2.ply'.format(scan_id)
+    filename = '/root/dev/3RScan/{}/labels.instances.annotated.v2.ply'.format(scan_id)
     mesh = trimesh.load_mesh(filename)
 
     # scene graph
-    with open('/root/dataset/3RScan_ERP/new_relationships.json') as f:
+    with open('/root/dev/3DSSG/new_relationships.json') as f:
         relationships = json.load(f)[scan_id]
 
     # Output ERP size
@@ -48,16 +48,16 @@ def raycasting(scan_id, iterations):
     floor = obj2pc[1] # floor object id == 1
 
     # make scene folder    
-    save_path = "/root/dataset/3RScan_ERP/{}".format(scan_id)
-    if not os.path.exists(save_path):
-        os.mkdir(save_path)
+    save_path = "/root/dev/3RScan_ERP/{}".format(scan_id)
+    # if not os.path.exists(save_path):
+    #     os.mkdir(save_path)
 
     # ray casting
     for it in range(iterations):
         # make ERP folder in scene folder
         ERP_folder = os.path.join(save_path, 'ERP{}'.format(it))
-        if not os.path.exists(ERP_folder):
-            os.mkdir(ERP_folder)
+        # if not os.path.exists(ERP_folder):
+        #     os.mkdir(ERP_folder)
 
         # Get random camera position until it is on the floor
         floor_global_id = 0
@@ -137,7 +137,7 @@ def raycasting(scan_id, iterations):
 
 
         # save ERP image
-        cv2.imwrite(os.path.join(ERP_folder,"complete_ERP.jpg"), img)
+        # cv2.imwrite(os.path.join(ERP_folder,"complete_ERP.jpg"), img)
 
         # make partial image and partial scene graph
         # make mask.jpg when there are 5~10 objects in masking area
@@ -222,7 +222,7 @@ def raycasting(scan_id, iterations):
 
 '''
 if __name__=='__main__':
-    dataset = '/root/dataset/3RScan'
+    dataset = '/root/dev/3RScan'
     scan_id_list = os.listdir(dataset)
     # scan_id = "4fbad329-465b-2a5d-8401-a3f550ef3de5"
     iterations = 5
