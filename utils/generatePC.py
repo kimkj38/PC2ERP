@@ -113,6 +113,14 @@ def get_obj2hex(scan_id):
 
     return obj2hex
 
+# object position : (x_mean, y_mean, z_mean) of object's pointcloud
+def obj_pos(obj2pc):
+    obj_center_pos = {} # key: object id, value: [x_mean, y_mean, z_mean]
+    for key in obj2pc.keys():
+        obj_pc = np.array(obj2pc[key])
+        mean_obj_pc = np.mean(obj_pc, axis=0) # mean 말고 (최소 + 최대) / 2
+        obj_center_pos.update({int(key) : mean_obj_pc.tolist()})
+    return obj_center_pos
 
 
 # point_cloud = get_pc(scan_id)
