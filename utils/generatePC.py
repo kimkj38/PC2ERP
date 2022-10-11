@@ -118,8 +118,8 @@ def obj_pos(obj2pc):
     obj_center_pos = {} # key: object id, value: [x_mean, y_mean, z_mean]
     for key in obj2pc.keys():
         obj_pc = np.array(obj2pc[key])
-        mean_obj_pc = np.mean(obj_pc, axis=0) # mean 말고 (최소 + 최대) / 2
-        obj_center_pos.update({int(key) : mean_obj_pc.tolist()})
+        center_obj_pc = (np.min(obj_pc, axis=0) + np.max(obj_pc, axis=0)) / 2 # (min + max) / 2
+        obj_center_pos.update({key : center_obj_pc.tolist()})
     return obj_center_pos
 
 
