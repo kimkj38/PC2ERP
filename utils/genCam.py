@@ -4,13 +4,14 @@ import random
 
 from plyfile import PlyData, PlyElement
 
-def rand_cam(ply_file, point_cloud, object_to_pc):
+def rand_cam(ply_file, point_cloud, object_to_pc, rand_seed=None):
     #=========================================================================
     # Get random camera position until it is on the floor
     # Args:
     #     ply_file : path of the ply file
     #     point_cloud : point cloud data
     #     object_to_pc : points of objects
+    #     rand_seed : random seed for generating camera
     #=========================================================================
     mesh = trimesh.load_mesh(ply_file)
     plydata = PlyData.read(ply_file)
@@ -22,6 +23,8 @@ def rand_cam(ply_file, point_cloud, object_to_pc):
     
     min_point = np.min(point_cloud, axis=0)
     max_point = np.max(point_cloud, axis=0)
+    
+    random.seed(rand_seed)
     
     floor_global_id = 0
     while floor_global_id != 188: # floor global id == 188
