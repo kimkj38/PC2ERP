@@ -7,9 +7,9 @@ import os
 import numpy as np
 from plyfile import PlyData, PlyElement
 from utils import generatePC
-from utils import genCam
-from utils import Object # class
-from utils import BirdEyeView # class
+from utils import gencam
+from utils import object # class
+from utils import birdeyeview # class
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -107,7 +107,7 @@ def extract_ddb(scan_id, overwrite=True, viz=False, rand_seed=None):
     #=========================================================================
     # get the camera position and objects' positions
     #=========================================================================
-    cam = Object.Obj(genCam.rand_cam(filename, point_cloud, obj2pc, rand_seed))
+    cam = Object.Obj(gencam.rand_cam(filename, point_cloud, obj2pc, rand_seed))
     print('Position of camera: ', cam.getCart())
     obj_poses = generatePC.obj_pos(obj2pc)
     objs = {}
@@ -119,7 +119,7 @@ def extract_ddb(scan_id, overwrite=True, viz=False, rand_seed=None):
     #=========================================================================
     # with BEV class
     #=========================================================================
-    bev = BirdEyeView.BEV(cam.getCart(), obj_poses)
+    bev = birdeyeview.BEV(cam.getCart(), obj_poses)
     
     # get the distances and directions
     distances = bev.Distance()
