@@ -10,9 +10,11 @@ import numpy as np
 # subset json
 # with open('subset.json') as f:
 #     subset_file = json.load(f)["scans"]
+_3dssg_path = '/root/dev/3DSSG/'
+_3rscan_path = '/root/dev/3RScan/'
 
 # original json
-with open('original.json') as f:
+with open(_3dssg_path + 'objects.json') as f:
     original_file = json.load(f)["scans"]
 
 # get rgb from hex code
@@ -25,7 +27,7 @@ def hex2rgb(hex):
 def get_word2idx():
     word2idx = {} # key: object name, value: object id
     index = 0
-    file = open("classes.txt", 'r')
+    file = open(_3dssg_path + "classes.txt", 'r')
     category = file.readline()[:-1]
     while category:
         word2idx[category] = index
@@ -36,7 +38,7 @@ def get_word2idx():
 
 # point cloud
 def get_pc(scan_id):
-    with open('{}/mesh.refined.v2.obj'.format(scan_id)) as f:
+    with open(_3rscan_path + '{}/mesh.refined.v2.obj'.format(scan_id)) as f:
         point_cloud = []
         while 1:
             line = f.readline()
@@ -53,7 +55,7 @@ def get_pc(scan_id):
 # segment & point cloud correspondence
 def get_seg2pc(scan_id, point_cloud):
     seg2pc = {}  # key:segment id, value: points belong to this segment
-    with open("{}/mesh.refined.0.010000.segs.v2.json".format(scan_id), 'r') as f:
+    with open(_3rscan_path + "{}/mesh.refined.0.010000.segs.v2.json".format(scan_id), 'r') as f:
         seg_indices = json.load(f)["segIndices"]
         for index, i in enumerate(seg_indices):
             if i not in seg2pc:
@@ -69,7 +71,7 @@ def get_seg2pc(scan_id, point_cloud):
 
 # seg groups
 def get_obj2pc(scan_id, seg2pc):
-    with open("{}/semseg.v2.json".format(scan_id), 'r') as f:
+    with open(_3rscan_path + "{}/semseg.v2.json".format(scan_id), 'r') as f:
         obj2pc = {} # key: object id, value: point cloud
         seg2obj = {} # key: segment id, value: object id
         seg_groups = json.load(f)["segGroups"]
@@ -111,6 +113,14 @@ def get_obj2hex(scan_id):
 
     return obj2hex
 
+# object position : (x_mean, y_mean, z_mean) of object's pointcloud
+def obj_pos(obj2pc):
+    obj_center_pos = {} # key: object id, value: [x_mean, y_mean, z_mean]
+    for key in obj2pc.keys():
+        obj_pc = np.array(obj2pc[key])
+        center_obj_pc = (np.min(obj_pc, axis=0) + np.max(obj_pc, axis=0)) / 2 # (min + max) / 2
+        obj_center_pos.update({key : center_obj_pc.tolist()})
+    return obj_center_pos
 
 
 # point_cloud = get_pc(scan_id)

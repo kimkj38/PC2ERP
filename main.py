@@ -24,11 +24,16 @@ def raycasting(scan_id, iterations):
         os.mkdir(root)
 
     # scene mesh
-    filename = '/root/dataset/3RScan/{}/labels.instances.annotated.v2.ply'.format(scan_id)
+    filename = '/root/dev/3RScan/{}/labels.instances.annotated.v2.ply'.format(scan_id)
     mesh = trimesh.load_mesh(filename)
 
+<<<<<<< HEAD
     # relationships
     with open('/root/dataset/3DSSG/new_relationships.json') as f:
+=======
+    # scene graph
+    with open('/root/dev/3DSSG/new_relationships.json') as f:
+>>>>>>> acd5d8b772103b276d1f13d10b8315b91fbb25a1
         relationships = json.load(f)[scan_id]
     
     # objects
@@ -59,17 +64,29 @@ def raycasting(scan_id, iterations):
     floor = obj2pc[1] # floor object id == 1
 
     # make scene folder    
+<<<<<<< HEAD
     scan_path = os.path.join(root,"{}".format(scan_id))
     if not os.path.exists(scan_path):
         os.mkdir(scan_path)
 
+=======
+    save_path = "/root/dev/3RScan_ERP/{}".format(scan_id)
+    # if not os.path.exists(save_path):
+    #     os.mkdir(save_path)
+>>>>>>> acd5d8b772103b276d1f13d10b8315b91fbb25a1
 
     # ray casting
     for it in range(iterations):
         # make ERP folder in scene folder
+<<<<<<< HEAD
         ERP_path = os.path.join(scan_path, 'ERP{}'.format(it))
         if not os.path.exists(ERP_path):
             os.mkdir(ERP_path)
+=======
+        ERP_folder = os.path.join(save_path, 'ERP{}'.format(it))
+        # if not os.path.exists(ERP_folder):
+        #     os.mkdir(ERP_folder)
+>>>>>>> acd5d8b772103b276d1f13d10b8315b91fbb25a1
 
         # Get random camera position until it is on the floor
         floor_global_id = 0
