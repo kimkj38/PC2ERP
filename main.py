@@ -12,20 +12,30 @@ from plyfile import PlyData, PlyElement
 
 from utils.generatePC import *
 
-
 '''
 - 입력으로, ( scene, relation_json, camera_position, ray_components )를 받고, ERP 이미지를 반환해주는 방식으로 수정 필요
 '''
 def raycasting(scan_id, iterations):
     start = time.time()
     
+    # root(new dataset folder)
+    root = '/root/dataset/mini_SGE_DDB'
+    if not os.path.exists(root):
+        os.mkdir(root)
+
     # scene mesh
     filename = '/root/dataset/3RScan/{}/labels.instances.annotated.v2.ply'.format(scan_id)
     mesh = trimesh.load_mesh(filename)
 
-    # scene graph
-    with open('/root/dataset/3RScan_ERP/new_relationships.json') as f:
+    # relationships
+    with open('/root/dataset/3DSSG/new_relationships.json') as f:
         relationships = json.load(f)[scan_id]
+    
+    # objects
+    with open('/root/dataset/3DSSG/scan_key_objects.json', 'r') as f:
+        objects = json.load(f)
+    
+    new_obj = data_obj.copy()
 
     # Output ERP size
     width = 1024//2
@@ -49,16 +59,17 @@ def raycasting(scan_id, iterations):
     floor = obj2pc[1] # floor object id == 1
 
     # make scene folder    
-    save_path = "/root/dataset/3RScan_ERP/{}".format(scan_id)
-    if not os.path.exists(save_path):
-        os.mkdir(save_path)
+    scan_path = os.path.join(root,"{}".format(scan_id))
+    if not os.path.exists(scan_path):
+        os.mkdir(scan_path)
+
 
     # ray casting
     for it in range(iterations):
         # make ERP folder in scene folder
-        ERP_folder = os.path.join(save_path, 'ERP{}'.format(it))
-        if not os.path.exists(ERP_folder):
-            os.mkdir(ERP_folder)
+        ERP_path = os.path.join(scan_path, 'ERP{}'.format(it))
+        if not os.path.exists(ERP_path):
+            os.mkdir(ERP_path)
 
         # Get random camera position until it is on the floor
         floor_global_id = 0
@@ -81,6 +92,42 @@ def raycasting(scan_id, iterations):
 
         print(cam_x, cam_y, cam_z)
 
+        # relationships
+        relationsihps_path = os.path.join(ERP_path, 'relationships.json')
+        new_rel = relationships.copy()[scan_id]
+        with open(relationships_path, "w") as f:
+            json.dump(new_rel, f, indent=4)
+
+
+        # objects
+        obj_poses = generatePC.obj_pos(obj2pc)
+        bev = BirdEyeView.BEV((cam_x, cam_y, cam_z), obj_poses)
+        new_obj = data_obj[scan_id].copy() 
+
+        objects_path = os.path.join(ERP_path, 'objects.json')
+
+        if "camera" in new_obj:
+            print("The ddb information already exists!")
+            for j in range(len(new_obj["objects"])): # for the graph data
+                for k in bev.objects.keys(): # for each object id in the scene
+                    if int(new_obj["objects"][j]["id"]) == k:
+                        new_obj["objects"][j]["attributes"].update({"distance" : bev.Distance()[k]})
+                        new_obj["objects"][j]["attributes"].update({"direction" : bev.Direction()[k]})
+                        new_obj.update({"camera" : {"location" : (cam_x, cam_y, cam_z)}})
+
+        else:
+            print("adding configurations...")
+            for j in range(len(new_obj["objects"])): # for the graph data
+                for k in bev.objects.keys(): # for each object id in the scene
+                    if int(new_obj[j]["id"]) == k:
+                        new_obj["objects"][j]["attributes"].update({"distance" : bev.Distance()[k]})
+                        new_obj["objects"][j]["attributes"].update({"direction" : bev.Direction()[k]})
+                        new_obj.update({"camera" : {"location" : (cam_x, cam_y, cam_z)}})
+        
+        
+        with open(objects_path, "w") as f:
+            json.dump(new_obj, f, indent=4)
+                        
         # object ids list per section
         mask1 = []
         mask2 = []
@@ -138,14 +185,14 @@ def raycasting(scan_id, iterations):
 
 
         # save ERP image
-        cv2.imwrite(os.path.join(ERP_folder,"complete_ERP.jpg"), img)
+        # cv2.imwrite(os.path.join(ERP_folder,"complete_ERP.jpg"), img)
 
         # make partial image and partial scene graph
         # make mask.jpg when there are 5~10 objects in masking area
         if 5 <= len(set(mask1)) < 10:
             mask1_img = img.copy()
             mask1_img[:, :width//4, :] = 0
-            cv2.imwrite(os.path.join(ERP_folder, "mask1.jpg"), mask1_img)
+            cv2.imwrite(os.path.join(ERP_folder, "partial_image1.jpg"), mask1_img)
             partial_relation = {}
             
             obj_ids = mask2 + mask3 + mask4
@@ -157,13 +204,13 @@ def raycasting(scan_id, iterations):
                     partial_relation[i] = obj
                     i += 1
 
-            with open(os.path.join(ERP_folder, "mask1.json"), "w") as f:
+            with open(os.path.join(ERP_folder, "partial_relationships1.json"), "w") as f:
                 json.dump(partial_relation, f)
 
         if 5 <= len(set(mask2)) < 10:
             mask2_img = img.copy()
             mask2_img[:, width//4:width//2, :] = 0
-            cv2.imwrite(os.path.join(ERP_folder, "mask2.jpg"), mask2_img)
+            cv2.imwrite(os.path.join(ERP_folder, "partial_image2.jpg"), mask2_img)
             partial_relation = {}
             
             obj_ids = mask1 + mask3 + mask4
@@ -175,13 +222,13 @@ def raycasting(scan_id, iterations):
                     i += 1
 
 
-            with open(os.path.join(ERP_folder, "mask2.json"), "w") as f:
+            with open(os.path.join(ERP_folder, "partial_relationships2.json"), "w") as f:
                 json.dump(partial_relation, f)
 
         if 5 <= len(set(mask3)) < 10:
             mask3_img = img.copy()
             mask3_img[:, width//2:width*3//4, :] = 0
-            cv2.imwrite(os.path.join(ERP_folder, "mask3.jpg"), mask3_img)
+            cv2.imwrite(os.path.join(ERP_folder, "partial_image3.jpg"), mask3_img)
             partial_relation = {}
             
             obj_ids = mask2 + mask2 + mask4
@@ -192,13 +239,13 @@ def raycasting(scan_id, iterations):
                     partial_relation[i] = obj
                     i += 1
 
-            with open(os.path.join(ERP_folder, "mask3.json"), "w") as f:
+            with open(os.path.join(ERP_folder, "partial_relationships3.json"), "w") as f:
                 json.dump(partial_relation, f)
 
         if 5 <= len(set(mask4)) < 10:
             mask4_img = img.copy()
             mask4_img[:, width*3//4:, :] = 0
-            cv2.imwrite(os.path.join(ERP_folder, "mask4.jpg"), mask4_img)
+            cv2.imwrite(os.path.join(ERP_folder, "partial_image4.jpg"), mask4_img)
             partial_relation = {}
             
             obj_ids = mask1 + mask2 + mask3
@@ -209,7 +256,7 @@ def raycasting(scan_id, iterations):
                     partial_relation[i] = obj
                     i += 1
 
-            with open(os.path.join(ERP_folder, "mask4.json"), "w") as f:
+            with open(os.path.join(ERP_folder, "partial_relationships4.json"), "w") as f:
                 json.dump(partial_relation, f)
 
         print(set(mask1), len(set(mask1)))
@@ -223,7 +270,7 @@ def raycasting(scan_id, iterations):
 
 '''
 if __name__=='__main__':
-    dataset = '/root/dataset/3RScan'
+    dataset = '/root/dev/3RScan'
     scan_id_list = os.listdir(dataset)
     # scan_id = "4fbad329-465b-2a5d-8401-a3f550ef3de5"
     iterations = 5
